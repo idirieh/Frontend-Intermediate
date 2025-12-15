@@ -272,7 +272,7 @@ header {
   margin: 0 auto; 
 }
 .main-title { 
-  color: aqua;
+  color: red;
   font-size: 28px; 
   color: var(--color-secondary); 
   font-weight: 700; 
