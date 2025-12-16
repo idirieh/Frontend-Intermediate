@@ -12,7 +12,9 @@
   <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-  <div class="container page-wrap">
+
+  <!-- Header -->
+
   <header>
     <div class="container header-inner">
         <div class="header-left">
@@ -36,6 +38,7 @@
     
       </div>
   </header>
+
   <!-- Mobile navigation overlay -->
   <div id="mobileNav" class="mobile-nav" aria-hidden="true">
     <button class="mobile-close" aria-label="Close menu">
@@ -51,7 +54,8 @@
       <button class="btn">Get Started</button>
     </div>
   </div>
-  <main>
+
+  <main class="container">
 
     <!-- Hero Section -->
 
@@ -72,8 +76,8 @@
 
     <section class="features">
       <div class="primary-feature">
-        <h2 class="f-heading">What’s different about Manage?</h2>
-        <p class="f-text">
+        <h2 class="primary-f-heading">What’s different about Manage?</h2>
+        <p class="primary-f-text">
           Manage provides all the functionality your team needs, without 
           the complexity. Our software is tailor-made for modern digital 
           product teams. 
@@ -81,7 +85,7 @@
       </div>
       <div class="secondary-features">
         <div class="feature1">
-          <h3>01 Track company-wide progress</h3>
+          <h3><span class="number">01</span> Track company-wide progress</h3>
           <p>
             See how your day-to-day tasks fit into the wider vision. Go from 
             tracking progress at the milestone level all the way done to the 
@@ -89,7 +93,7 @@
           </p>
         </div>
         <div class="feature2">
-          <h3>02 Advanced built-in reports</h3>
+          <h3><span class="number">02</span> Advanced built-in reports</h3>
           <p>
             Set internal delivery estimates and track progress toward company 
             goals. Our customisable dashboard helps you build out the reports 
@@ -97,7 +101,7 @@
           </p>
         </div>
         <div class="feature3">
-          <h3>03 Everything you need in one place</h3>
+          <h3><span class="number">03</span> Everything you need in one place</h3>
           <p>
             Stop jumping from one service to another to communicate, store files, 
             track tasks and share documents. Manage offers an all-in-one team 
@@ -146,25 +150,25 @@
         </div>
       </section>
 
-    </div> <!-- .page-wrap -->
 
-      <section class="cta-section">
-        <div class="container">
-          <h2>Simplify how your team works today.</h2>
-          <button class="btn cta-btn">Get Started</button>
-        </div>
-      </section>
 
-    </main>
-
+  </main>
+  <section class="cta-section">
+      <div class="container">
+        <h2>Simplify how your team works today.</h2>
+        <button class="btn cta-btn">Get Started</button>
+      </div>
+  </section>
   <footer>
     <div class="container footer-inner">
       <img src="images/logo.svg" alt="Manage logo" class="logo footer-logo">
-      <ul class="footer-links">
+      <ul class="footer-menu">
         <li><a href="#">Home</a></li>
         <li><a href="#">Pricing</a></li>
         <li><a href="#">Products</a></li>
         <li><a href="#">About Us</a></li>
+      </ul>
+      <ul class="footer-menu">
         <li><a href="#">Careers</a></li>
         <li><a href="#">Community</a></li>
         <li><a href="#">Privacy Policy</a></li>
