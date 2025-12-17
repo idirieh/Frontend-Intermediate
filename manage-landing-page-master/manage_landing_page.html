@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage - Bring everyone together to build better products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --orange-400: hsl(12, 88%, 59%);
+            --blue-950: hsl(228, 39%, 23%);
+            --gray-950: hsl(233, 12%, 13%);
+            --orange-50: hsl(13, 100%, 96%);
+            --gray-50: hsl(0, 0%, 98%);
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--gray-950);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            position: relative;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--blue-950);
+        }
+
+        .logo::before {
+            content: "::";
+            color: var(--orange-400);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--blue-950);
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange-400);
+        }
+
+        .btn {
+            background: var(--orange-400);
+            color: white;
+            padding: 12px 32px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 16px rgba(242, 95, 58, 0.3);
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(242, 95, 58, 0.4);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--blue-950);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 24px;
+            right: 24px;
+            background: white;
+            border-radius: 8px;
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            z-index: 99;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-nav-links li {
+            margin-bottom: 24px;
+        }
+
+        .mobile-nav-links a {
+            text-decoration: none;
+            color: var(--blue-950);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0 120px;
+            background: var(--orange-50);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(255, 214, 201, 0.5), rgba(255, 175, 148, 0.3));
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--blue-950);
+            margin-bottom: 24px;
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            color: var(--gray-950);
+            opacity: 0.7;
+            margin-bottom: 32px;
+            max-width: 400px;
+        }
+
+        .hero-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .chart-card {
+            background: white;
+            border-radius: 8px;
+            padding: 32px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+        }
+
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 12px;
+            height: 120px;
+        }
+
+        .bar {
+            flex: 1;
+            border-radius: 4px;
+        }
+
+        .bar.orange { background: var(--orange-400); height: 60%; }
+        .bar.navy { background: var(--blue-950); height: 75%; }
+        .bar.orange-2 { background: var(--orange-400); height: 90%; }
+        .bar.navy-2 { background: var(--blue-950); height: 100%; }
+        .bar.orange-3 { background: var(--orange-400); height: 70%; }
+
+        .donut-chart {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: conic-gradient(var(--orange-400) 0deg 216deg, var(--blue-950) 216deg 360deg);
+            position: relative;
+        }
+
+        .donut-chart::after {
+            content: "";
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            background: white;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+            grid-column: span 2;
+        }
+
+        .stat-large {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--blue-950);
+            margin-bottom: 16px;
+        }
+
+        .stat-small {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .stat-box {
+            background: var(--orange-400);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            color: var(--blue-950);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+
+        .features-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .features-intro h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--blue-950);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .features-intro p {
+            color: var(--gray-950);
+            opacity: 0.7;
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 24px;
+        }
+
+        .feature-number {
+            background: var(--orange-400);
+            color: white;
+            width: 64px;
+            height: 40px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .feature-content h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--blue-950);
+            margin-bottom: 12px;
+        }
+
+        .feature-content p {
+            color: var(--gray-950);
+            opacity: 0.7;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--blue-950);
+            margin-bottom: 80px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 48px 32px 32px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            position: absolute;
+            top: -36px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 4px solid white;
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+            color: var(--blue-950);
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .testimonial-text {
+            color: var(--gray-950);
+            opacity: 0.7;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .testimonial-cta {
+            text-align: center;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: var(--orange-400);
+            padding: 80px 0;
+        }
+
+        .cta-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            font-weight: 700;
+            color: white;
+            max-width: 450px;
+            line-height: 1.2;
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--orange-400);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gray-950);
+            padding: 60px 0 32px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 80px;
+            margin-bottom: 48px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .footer-logo .logo {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--orange-400);
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--orange-400);
+        }
+
+        .newsletter {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 8px;
+        }
+
+        .newsletter input {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 14px;
+        }
+
+        .newsletter button {
+            background: var(--orange-400);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .newsletter button:hover {
+            opacity: 0.8;
+        }
+
+        .copyright {
+            text-align: right;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links,
+            .nav-btn {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .hero-text p {
+                max-width: 100%;
+            }
+
+            .hero-images {
+                order: -1;
+            }
+
+            .features-content {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content {
+                flex-direction: column;
+                gap: 32px;
+                text-align: center;
+            }
+
+            .cta h2 {
+                max-width: 100%;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .footer-logo {
+                order: 1;
+                align-items: center;
+            }
+
+            .footer-links {
+                order: -1;
+            }
+
+            .newsletter {
+                order: 0;
+            }
+
+            .copyright {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">manage</div>
+                <ul class="nav-links">
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#product">Product</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#community">Community</a></li>
+                </ul>
+                <button class="btn nav-btn">Get Started</button>
+                <button class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#product">Product</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#community">Community</a></li>
+        </ul>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Bring everyone together to build better products.</h1>
+                    <p>Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.</p>
+                    <button class="btn">Get Started</button>
+                </div>
+                <div class="hero-images">
+                    <div class="chart-card">
+                        <div class="bar-chart">
+                            <div class="bar orange"></div>
+                            <div class="bar navy"></div>
+                            <div class="bar orange-2"></div>
+                            <div class="bar navy-2"></div>
+                            <div class="bar orange-3"></div>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="donut-chart"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-large">89.74%</div>
+                        <div class="stat-small">
+                            <div class="stat-box">+1.5%</div>
+                            <div class="stat-value">88.24%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="features-intro">
+                    <h2>What's different about Manage?</h2>
+                    <p>Manage provides all the functionality your team needs, without the complexity. Our software is tailor-made for modern digital product teams.</p>
+                </div>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-number">01</div>
+                        <div class="feature-content">
+                            <h3>Track company-wide progress</h3>
+                            <p>See how your day-to-day tasks fit into the wider vision. Go from tracking progress at the milestone level all the way done to the smallest of details. Never lose sight of the bigger picture again.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">02</div>
+                        <div class="feature-content">
+                            <h3>Advanced built-in reports</h3>
+                            <p>Set internal delivery estimates and track progress toward company goals. Our customisable dashboard helps you build out the reports you need to keep key stakeholders informed.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">03</div>
+                        <div class="feature-content">
+                            <h3>Everything you need in one place</h3>
+                            <p>Stop jumping from one service to another to communicate, store files, track tasks and share documents. Manage offers an all-in-one team productivity solution.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What they've said</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Ccircle cx='36' cy='36' r='36' fill='%23ccc'/%3E%3C/svg%3E" alt="Anisha Li" class="testimonial-avatar">
+                    <div class="testimonial-name">Anisha Li</div>
+                    <p class="testimonial-text">"Manage has supercharged our team's workflow. The ability to maintain visibility on larger milestones at all times keeps everyone motivated."</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Ccircle cx='36' cy='36' r='36' fill='%23ccc'/%3E%3C/svg%3E" alt="Ali Bravo" class="testimonial-avatar">
+                    <div class="testimonial-name">Ali Bravo</div>
+                    <p class="testimonial-text">"We have been able to cancel so many other subscriptions since using Manage. There is no more cross-channel confusion and everyone is much more focused."</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Ccircle cx='36' cy='36' r='36' fill='%23ccc'/%3E%3C/svg%3E" alt="Richard Watts" class="testimonial-avatar">
+                    <div class="testimonial-name">Richard Watts</div>
+                    <p class="testimonial-text">"Manage allows us to provide structure and process. It keeps us organized and focused. I can't stop recommending them to everyone I talk to!"</p>
+                </div>
+            </div>
+            <div class="testimonial-cta">
+                <button class="btn">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Simplify how your team works today.</h2>
+                <button class="btn">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">manage</div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="newsletter">
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Updates in your inbox…" required>
+                        <button type="submit">Go</button>
+                    </form>
+                    <div class="copyright">Copyright 2020. All Rights Reserved</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

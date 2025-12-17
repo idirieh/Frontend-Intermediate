@@ -314,68 +314,89 @@ header {
 .features {
   padding: 2rem 1rem;
   display: flex;
-  justify-content: space-between;
+  gap: 1em;
 }
 
 .primary-feature {
   max-width: 720px;
   margin: 0 auto 2rem;
-  /* flex-grow: 1; */
-  flex-basis: 70%;
-  
+  width: 70%;
 }
 
 .primary-f-heading {
   font: var(--font-h2);
-  
   color: var(--color-secondary);
   margin-bottom: 0.5rem;
+}
+
+.primary-f-text {
+  color: var(--color-gray-950);
+  width: 45ch;
 }
 
 .secondary-features {
   display: flex;
   gap: 1.25rem;
   flex-direction: column;
+  /* flex-basis: 80%; */
+}
+
+.secondary-features {
+  color: var(--color-gray-950);
 }
 
 .secondary-features > div {
-  background: white;
   padding: 1rem;
   /* flex-basis: 40%; */
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(34, 35, 46, 0.06);
 }
 
+.number {
+  background-color: var(--color-primary);
+  color: white;
+  font-size: .85rem;
+  padding: .5rem 1rem;
+  border-radius: 70px;
+}
+
 /* Testimonials Section */
-.testimonials {
+/* .testimonials {
   padding: 2rem 1rem;
+  overflow: hidden;
 }
 
 .t-heading {
   text-align: center;
+  font: var(--font-h2);
   color: var(--color-secondary);
   margin-bottom: 1rem;
 }
 
 .reviews {
-  display: grid;
+  display: flex;
   gap: 1rem;
-  grid-template-columns: repeat(4, 1fr);
+  width: max-content;
+  will-change: transform;
+  animation: reviews-scroll 14s linear infinite;
 }
+
+.reviews:hover { animation-play-state: paused; }
 
 .review-card {
   background: white;
   padding: 1rem;
+  text-align: center;
+  min-width: 350px;
+  flex: 0 0 320px;
   border-radius: 10px;
-  display: flex;
   gap: 0.75rem;
-  align-items: flex-start;
   box-shadow: 0 6px 18px rgba(34, 35, 46, 0.06);
 }
 
 .review-card img {
-  width: 48px;
-  height: 48px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
@@ -396,6 +417,92 @@ header {
   text-align: center;
   margin-top: 1rem;
 }
+
+@keyframes reviews-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (max-width: 640px) {
+  .review-card { min-width: 240px; flex: 0 0 260px; }
+  .reviews { animation-duration: 10s; }
+} */
+
+/* Testimonials Section */
+.testimonials {
+  padding: 2rem 1rem;
+  overflow: hidden;
+}
+
+.t-heading {
+  text-align: center;
+  font: var(--font-h2);
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.reviews {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  will-change: transform;
+  animation: reviews-scroll 30s linear infinite;
+}
+
+.reviews:hover { 
+  animation-play-state: paused; 
+}
+
+.review-card {
+  background: white;
+  padding: 1rem;
+  text-align: center;
+  min-width: 350px;
+  flex: 0 0 320px;
+  border-radius: 10px;
+  gap: 0.75rem;
+  box-shadow: 0 6px 18px rgba(34, 35, 46, 0.06);
+}
+
+.review-card img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.review-card .name {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.review-card .review {
+  margin: 0;
+  color: hsl(228, 8%, 45%);
+  font-size: 0.95rem;
+}
+
+.reviews-cta {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+@keyframes reviews-scroll {
+  0% { 
+    transform: translateX(0); 
+  }
+  100% { 
+    transform: translateX(calc(-100% - 1rem)); 
+  }
+}
+
+@media (max-width: 640px) {
+  .review-card { min-width: 240px; flex: 0 0 260px; }
+  .reviews { animation-duration: 15s; }
+}
+
+
 
 /* Call-to-Action Section */
 .cta-section {
