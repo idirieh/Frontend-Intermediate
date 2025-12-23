@@ -43,157 +43,157 @@
     <div class="search-section">
       <div class="search-bar">
         <span class="search-icon"><img src="./assets/images/icon-search.svg" alt=""></span>
-        <input type="text" placeholder="Search for a place...">
+        <input type="text" placeholder="Search for a place..." autofocus>
       </div>
       <button class="search-button">Search</button>
     </div>
 
     
-    <div class="main-content">
-
-      <!-- Main Weather Card -->
-      <div class="weather-card">
-        <div class="weather-card-content">
-            <div class="location-info">
-                <h2 class="location-name">Berlin, Germany</h2>
-                <p class="location-date">Tuesday, Aug 5, 2025</p>
-            </div>
-            <div class="weather-display">
-                <span class="weather-icon-large">☀️</span>
-                <span class="temperature-large">20°</span>
-            </div>
-        </div>
-      </div>
-
-      <div class="weather-details-grid">
-        <div class="detail-card">
-          <div class="detail-label">Feels Like</div>
-          <div class="detail-value">18°</div>
-        </div>
-        <div class="detail-card">
-          <div class="detail-label">Humidity</div>
-          <div class="detail-value">46%</div>
-        </div>
-        <div class="detail-card">
-          <div class="detail-label">Wind</div>
-          <div class="detail-value">14 km/h</div>
-        </div>
-        <div class="detail-card">
-          <div class="detail-label">Precipitation</div>
-          <div class="detail-value">0 mm</div>
-        </div>
-      </div>
-
-      <!-- Daily Forecast -->
-      <section class="daily-forecast-section">
-          <h3 class="section-title">Daily forecast</h3>
-          <div class="daily-forecast-grid">
-              <div class="forecast-day-card">
-                  <div class="day-name">Tue</div>
-                  <span class="forecast-icon">🌧️</span>
-                  <div class="forecast-temps">
-                      <span class="temp-high">20°</span>
-                      <span class="temp-low">14°</span>
-                  </div>
+    <div class="wrapper-flex">
+      <div class="main-content">
+        <!-- Main Weather Card -->
+        <div class="weather-card">
+          <div class="weather-card-content">
+              <div class="location-info">
+                  <h3 class="location-name">Berlin, Germany</h3>
+                  <p class="location-date">Tuesday, Aug 5, 2025</p>
               </div>
-              <div class="forecast-day-card">
-                  <div class="day-name">Wed</div>
-                  <span class="forecast-icon">🌧️</span>
-                  <div class="forecast-temps">
-                      <span class="temp-high">21°</span>
-                      <span class="temp-low">15°</span>
-                  </div>
-              </div>
-              <div class="forecast-day-card">
-                  <div class="day-name">Thu</div>
-                  <span class="forecast-icon">☀️</span>
-                  <div class="forecast-temps">
-                      <span class="temp-high">24°</span>
-                      <span class="temp-low">14°</span>
-                  </div>
-              </div>
-              <div class="forecast-day-card">
-                  <div class="day-name">Fri</div>
-                  <span class="forecast-icon">⛅</span>
-                  <div class="forecast-temps">
-                      <span class="temp-high">25°</span>
-                      <span class="temp-low">13°</span>
-                  </div>
-              </div>
-              <div class="forecast-day-card">
-                  <div class="day-name">Sat</div>
-                  <span class="forecast-icon">⛈️</span>
-                  <div class="forecast-temps">
-                      <span class="temp-high">21°</span>
-                      <span class="temp-low">15°</span>
-                  </div>
-              </div>
-              <div class="forecast-day-card">
-                  <div class="day-name">Sun</div>
-                  <span class="forecast-icon">🌧️</span>
-                  <div class="forecast-temps">
-                      <span class="temp-high">25°</span>
-                      <span class="temp-low">16°</span>
-                  </div>
-              </div>
-              <div class="forecast-day-card">
-                  <div class="day-name">Mon</div>
-                  <span class="forecast-icon">🌫️</span>
-                  <div class="forecast-temps">
-                      <span class="temp-high">24°</span>
-                      <span class="temp-low">15°</span>
-                  </div>
+              <div class="weather-display">
+                  <img src="./assets/images/icon-sunny.webp" alt="Sunny">
+                  <h2 class="temperature-large">20°</h2>
               </div>
           </div>
-      </section>
-    </div>
-
-    <!-- Hourly Forecast Sidebar -->
-    <aside class="hourly-forecast-sidebar">
-        <h3 class="sidebar-title">Hourly forecast</h3>
-        <div class="hourly-forecast-list">
-            <div class="hourly-item">
-                <span class="hour-icon">☁️</span>
-                <span class="hour-time">3 PM</span>
-                <span class="hour-temp"></span>
-            </div>
-            <div class="hourly-item">
-                <span class="hour-icon">☁️</span>
-                <span class="hour-time">4 PM</span>
-                <span class="hour-temp">20°</span>
-            </div>
-            <div class="hourly-item">
-                <span class="hour-icon">⛅</span>
-                <span class="hour-time">5 PM</span>
-                <span class="hour-temp">20°</span>
-            </div>
-            <div class="hourly-item">
-                <span class="hour-icon">☁️</span>
-                <span class="hour-time">6 PM</span>
-                <span class="hour-temp">19°</span>
-            </div>
-            <div class="hourly-item">
-                <span class="hour-icon">☁️</span>
-                <span class="hour-time">7 PM</span>
-                <span class="hour-temp">18°</span>
-            </div>
-            <div class="hourly-item">
-                <span class="hour-icon">🌫️</span>
-                <span class="hour-time">8 PM</span>
-                <span class="hour-temp">18°</span>
-            </div>
-            <div class="hourly-item">
-                <span class="hour-icon">☁️</span>
-                <span class="hour-time">9 PM</span>
-                <span class="hour-temp">17°</span>
-            </div>
-            <div class="hourly-item">
-                <span class="hour-icon">☁️</span>
-                <span class="hour-time">10 PM</span>
-                <span class="hour-temp">17°</span>
-            </div>
         </div>
-    </aside>
+        <!-- Weather Details -->
+        <div class="weather-details-grid">
+          <div class="detail-card">
+            <div class="detail-label">Feels Like</div>
+            <div class="detail-value">18°</div>
+          </div>
+          <div class="detail-card">
+            <div class="detail-label">Humidity</div>
+            <div class="detail-value">46%</div>
+          </div>
+          <div class="detail-card">
+            <div class="detail-label">Wind</div>
+            <div class="detail-value">14 km/h</div>
+          </div>
+          <div class="detail-card">
+            <div class="detail-label">Precipitation</div>
+            <div class="detail-value">0 mm</div>
+          </div>
+        </div>
+        <!-- Daily Forecast -->
+        <section class="daily-forecast-section">
+            <h3 class="section-title">Daily forecast</h3>
+            <div class="daily-forecast-grid">
+                <div class="forecast-day-card">
+                    <div class="day-name">Tue</div>
+                    <span class="forecast-icon">🌧️</span>
+                    <div class="forecast-temps">
+                        <span class="temp-high">20°</span>
+                        <span class="temp-low">14°</span>
+                    </div>
+                </div>
+                <div class="forecast-day-card">
+                    <div class="day-name">Wed</div>
+                    <span class="forecast-icon">🌧️</span>
+                    <div class="forecast-temps">
+                        <span class="temp-high">21°</span>
+                        <span class="temp-low">15°</span>
+                    </div>
+                </div>
+                <div class="forecast-day-card">
+                    <div class="day-name">Thu</div>
+                    <span class="forecast-icon">☀️</span>
+                    <div class="forecast-temps">
+                        <span class="temp-high">24°</span>
+                        <span class="temp-low">14°</span>
+                    </div>
+                </div>
+                <div class="forecast-day-card">
+                    <div class="day-name">Fri</div>
+                    <span class="forecast-icon">⛅</span>
+                    <div class="forecast-temps">
+                        <span class="temp-high">25°</span>
+                        <span class="temp-low">13°</span>
+                    </div>
+                </div>
+                <div class="forecast-day-card">
+                    <div class="day-name">Sat</div>
+                    <span class="forecast-icon">⛈️</span>
+                    <div class="forecast-temps">
+                        <span class="temp-high">21°</span>
+                        <span class="temp-low">15°</span>
+                    </div>
+                </div>
+                <div class="forecast-day-card">
+                    <div class="day-name">Sun</div>
+                    <span class="forecast-icon">🌧️</span>
+                    <div class="forecast-temps">
+                        <span class="temp-high">25°</span>
+                        <span class="temp-low">16°</span>
+                    </div>
+                </div>
+                <div class="forecast-day-card">
+                    <div class="day-name">Mon</div>
+                    <span class="forecast-icon">🌫️</span>
+                    <div class="forecast-temps">
+                        <span class="temp-high">24°</span>
+                        <span class="temp-low">15°</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+      </div>
+      
+      <!-- Hourly Forecast Sidebar -->
+      <aside class="hourly-forecast-sidebar">
+          <h3 class="sidebar-title">Hourly forecast</h3>
+          <div class="hourly-forecast-list">
+              <div class="hourly-item">
+                  <span class="hour-icon">☁️</span>
+                  <span class="hour-time">3 PM</span>
+                  <span class="hour-temp"></span>
+              </div>
+              <div class="hourly-item">
+                  <span class="hour-icon">☁️</span>
+                  <span class="hour-time">4 PM</span>
+                  <span class="hour-temp">20°</span>
+              </div>
+              <div class="hourly-item">
+                  <span class="hour-icon">⛅</span>
+                  <span class="hour-time">5 PM</span>
+                  <span class="hour-temp">20°</span>
+              </div>
+              <div class="hourly-item">
+                  <span class="hour-icon">☁️</span>
+                  <span class="hour-time">6 PM</span>
+                  <span class="hour-temp">19°</span>
+              </div>
+              <div class="hourly-item">
+                  <span class="hour-icon">☁️</span>
+                  <span class="hour-time">7 PM</span>
+                  <span class="hour-temp">18°</span>
+              </div>
+              <div class="hourly-item">
+                  <span class="hour-icon">🌫️</span>
+                  <span class="hour-time">8 PM</span>
+                  <span class="hour-temp">18°</span>
+              </div>
+              <div class="hourly-item">
+                  <span class="hour-icon">☁️</span>
+                  <span class="hour-time">9 PM</span>
+                  <span class="hour-temp">17°</span>
+              </div>
+              <div class="hourly-item">
+                  <span class="hour-icon">☁️</span>
+                  <span class="hour-time">10 PM</span>
+                  <span class="hour-temp">17°</span>
+              </div>
+          </div>
+      </aside>
+    </div>
 
   </main>
 

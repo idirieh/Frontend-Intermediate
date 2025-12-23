@@ -18,6 +18,20 @@
       background-color: hsl(243, 27%, 20%);
       margin-inline: auto;
     }
+    .skeleton-card {
+      width: 300px;
+      height: 200px;
+      background-color: #e2e2e2;
+      border-radius: 8px;
+      /* The shimmer effect */
+      background: linear-gradient(90deg, #eee 25%, #f5f5f5 50%, #eee 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+    @keyframes loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
   </style>
   <title>Document</title>
 </head>
@@ -29,6 +43,7 @@
       </div>
       <button class="search-button">Search</button>
     </div>
+    <div class="skeleton-card"></div>
 </body>
 </html>
 
