@@ -37,6 +37,7 @@
     </nav>
     
   </header>
+
   <main class="container">
 
     <h1 class="main-title">How's the sky looking today?</h1>
@@ -149,12 +150,34 @@
       
       <!-- Hourly Forecast Sidebar -->
       <aside class="hourly-forecast-sidebar">
-          <h3 class="sidebar-title">Hourly forecast</h3>
+          <div class="side-header">
+            <h3 class="sidebar-title">Hourly forecast</h3>
+            <div class="dropdown-list">
+            <select>
+              <option disabled selected>
+                <img src="./assets/images/icon-units.svg" alt="">
+                Today</option>
+              <optgroup label="Temperature">
+                <option value="celsius">Celsius (°C)</option>
+                <option value="fahrenheit">Fahrenheit (°F)</option>
+              </optgroup>
+              <optgroup label="Wind Speed">
+                <option value="kmh">km/h</option>
+                <option value="mph">mph</option>
+              </optgroup>
+              <optgroup label="Precipitation">
+                <option value="mm">Millimeters (mm)</option>
+                <option value="in">Inches (in)</option>
+              </optgroup>
+            </select>
+          </div>
+          </div>
+          
           <div class="hourly-forecast-list">
               <div class="hourly-item">
                   <span class="hour-icon">☁️</span>
                   <span class="hour-time">3 PM</span>
-                  <span class="hour-temp"></span>
+                  <span class="hour-temp">20°</span>
               </div>
               <div class="hourly-item">
                   <span class="hour-icon">☁️</span>
@@ -199,6 +222,6 @@
 
 
 
-  
+  <script src="app.js"></script>
 </body>
 </html>

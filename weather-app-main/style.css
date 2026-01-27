@@ -150,14 +150,13 @@ body {
   line-height: var(--line-height-base, 1.6);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
   background: var(--color-bg, #fff);
   color: var(--color-text, #000);
   font: var(--font-body, 400 1.125rem/1.6 sans-serif);
 }
 
 .container {
-  max-width: var(--container-lg);
+  max-width: var(--container-2xl);
   margin-inline: auto;
 }
 
@@ -166,6 +165,7 @@ body {
   justify-content: space-between;
   margin: 2rem 0;
 }
+
 
 select {
   background-color: var(--color-neutral-800);
@@ -177,7 +177,12 @@ select {
 
 select option {
   background-color: var(--color-neutral-700);
-  color: var(--color-text);
+  color: var(--color-text);  
+  
+}
+
+option, optgroup {
+  font-size: .875rem;
 }
 
 .main-title {
@@ -249,7 +254,6 @@ select option {
     background-color: var(--color-blue-700);
 }
 
-
 .wrapper-flex {
   display: flex;
   justify-content: center;
@@ -260,9 +264,7 @@ select option {
 
 .main-content {
   /* background: var(--color-neutral-600); */
-  /* width: 70%; */
-  /* flex-basis: 70%; */
-  flex: 1 1 70%;
+  width: 70%;
 }
 
 
@@ -282,10 +284,16 @@ select option {
   overflow: hidden;
 }
 
+
+
 .weather-card .weather-card-content {
   display: flex;
   justify-content: space-between;
   flex: 1 1 100%;
+}
+
+.weather-card .weather-card-content .location-date {
+  color: var(--color-neutral-200);
 }
 
 .weather-display img {
@@ -310,7 +318,8 @@ select option {
 }
 
 .weather-details-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1em;
   margin: var(--gap-8) 0;
 }
@@ -334,4 +343,19 @@ select option {
   background-color: var(--color-neutral-700);
   padding: 1rem 1.5rem;
   border-radius: var(--radius-md);
+}
+
+.forecast-temps {
+  display: flex;
+  gap: 1em;
+}
+
+/* Hourly Forecast Sidebar */
+
+.hourly-forecast-sidebar {
+  padding: 1em;
+}
+
+.hourly-forecast-sidebar .side-header {
+  display: flex;
 }
